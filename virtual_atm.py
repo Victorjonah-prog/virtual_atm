@@ -3,7 +3,7 @@ balance = 10000
 count = 0
 while count < 5:
 	ussd = input("enter ussd code:\n")
-	if ussd != "*555#":
+	if ussd != "*556#":
 		print ("invalid command try again")
 	else:	
 		
@@ -19,8 +19,8 @@ while count < 5:
 		command = int(input("enter command:\n"))
 		if command < 1 or command > 5:
 			print("invalid command")
-			if command == 5:
-				break		
+		if command == 5:
+			break		
 		if command == 1:
 				
 			airtime = int(input("enter amount of airtime to recharge:\n"))
@@ -32,10 +32,34 @@ while count < 5:
 				balance -= airtime
 				print(f"your new balance is {balance}")
 		if command == 2:
-			data = int(input("enter amount of data you want to recharge:\n"))
-			numb = int(input("enter phone number:\n"))
-			if data > balance: 
-				print(f"amount greater than {balance}")                                                 
+			print(''' 1. 1gb for 300
+				  2. 2gb for 500
+				  3. 3gb for 1000 
+
+			''')
+			data = int(input("enter command:\n"))
+			if data < 1 or data > 3:
+				print("invalid command")
+				
+			if data == 1:
+				numb = int(input("enter phone number:\n"))
+				print(f"you just recieved 1gb data to {numb}")
+				balance -= 300
+				print(f"your new balance is {balance}")
+			if data == 2:
+				numb = int(input("enter phone number:\n"))
+				print(f"you just recieved 2gb data to {numb}")
+				balance -= 500
+				print(f"your new balance is {balance}")
+			if data == 3:
+				numb = int(input("enter phone number:\n"))
+				print(f"you just recieved 1gb data to {numb}")
+				balance -= 1000
+				print(f"your new balance is {balance}")
+	
+
+
+					                                                 
 		if command == 3:
 			print('''
 		       	1. borrow airtime
@@ -54,9 +78,9 @@ while count < 5:
 					data_borrow = int(input("enter amount of data you want to borrow:\n"))
 					data_num = int(input("enter phone number:\n"))
 					print(f"you borrowed {data_borrow} of data")
-			if command == 4:
-				print(f"your account balance is {balance}")
-				break  
+		if command == 4:
+			print(f"your account balance is {balance}")
+			break  
 				
 
 		
