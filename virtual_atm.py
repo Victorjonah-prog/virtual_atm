@@ -1,4 +1,4 @@
-# virtual atm
+# recharge card app
 balance = 10000
 count = 0
 while count < 5:
@@ -28,13 +28,13 @@ while count < 5:
 			if airtime > balance:
 				print("amount greater than {balance}")
 			else:
-				print(f"you recharged {airtime} to {num}")
+				print(f"you recharged {airtime}₦ to {num}")
 				balance -= airtime
 				print(f"your new balance is {balance}")
 		if command == 2:
-			print(''' 1. 1gb for 300
-				  2. 2gb for 500
-				  3. 3gb for 1000 
+			print(''' 1. 1gb for 300₦
+				  2. 2gb for 500₦
+				  3. 3gb for 1000₦ 
 
 			''')
 			data = int(input("enter command:\n"))
@@ -53,7 +53,7 @@ while count < 5:
 				print(f"your new balance is {balance}")
 			if data == 3:
 				numb = int(input("enter phone number:\n"))
-				print(f"you just recieved 1gb data to {numb}")
+				print(f"you just recieved 3gb data to {numb}")
 				balance -= 1000
 				print(f"your new balance is {balance}")
 	
@@ -80,7 +80,7 @@ while count < 5:
 					print(f"you borrowed {data_borrow} of data")
 		if command == 4:
 			print(f"your account balance is {balance}")
-			break  
+			  
 				
 
 		
