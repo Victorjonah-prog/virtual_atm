@@ -91,13 +91,13 @@ while count < 5:
 
 					print(f"you borrowed {airtime_borrow} of airtime")
 			
-				if borrow == 2:
-					data_borrow = int(input("enter amount of data you want to borrow:\n"))
-					data_num = int(input("enter phone number:\n"))
-					if data_borrow > 5000:
-						print("amount cant be greater than 5000")
-					else:	
-						print(f"you borrowed {data_borrow} of data")
+			if borrow == 2:
+				data_borrow = int(input("enter amount of data you want to borrow:\n"))
+				data_num = int(input("enter phone number:\n"))
+				if data_borrow > 5000:
+					print("amount cant be greater than 5000")
+				else:	
+					print(f"you borrowed {data_borrow} of data")
 		if command == 4:
 			print(f"your account balance is {balance}")
 			  
