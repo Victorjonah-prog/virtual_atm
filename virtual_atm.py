@@ -1,6 +1,7 @@
 # recharge card app
 balance = 10000
 count = 0
+number ="12345678910"
 while count < 5:
 	ussd = input("enter ussd code:\n")
 	if ussd != "*556#":
@@ -25,12 +26,16 @@ while count < 5:
 				
 			airtime = int(input("enter amount of airtime to recharge:\n"))
 			num = int(input("enter phone number:\n"))
-			if airtime > balance:
-				print("amount greater than {balance}")
+			if num < len(number) or num > len(number):
+				print("invalid length of number")
 			else:
-				print(f"you recharged {airtime}₦ to {num}")
-				balance -= airtime
-				print(f"your new balance is {balance}")
+
+				if airtime > balance:
+					print(f"amount greater than {balance}")
+				else:
+					print(f"you recharged {airtime}₦ to {num}")
+					balance -= airtime
+					print(f"your new balance is {balance}")
 		if command == 2:
 			print(''' 1. 1gb for 300₦
 				  2. 2gb for 500₦
@@ -43,14 +48,22 @@ while count < 5:
 				
 			if data == 1:
 				numb = int(input("enter phone number:\n"))
-				print(f"you just recieved 1gb data to {numb}")
-				balance -= 300
-				print(f"your new balance is {balance}")
+				if numb < len(number) or numb > len(number):
+					print("invalid length of number")
+				else:	
+
+					print(f"you just recieved 1gb data to {numb}")
+					balance -= 300
+					print(f"your new balance is {balance}")
 			if data == 2:
 				numb = int(input("enter phone number:\n"))
-				print(f"you just recieved 2gb data to {numb}")
-				balance -= 500
-				print(f"your new balance is {balance}")
+				if numb < len(number) or numb > len(number):
+					print("invalid length of number")
+				else:	
+
+					print(f"you just recieved 2gb data to {numb}")
+					balance -= 500
+					print(f"your new balance is {balance}")
 			if data == 3:
 				numb = int(input("enter phone number:\n"))
 				print(f"you just recieved 3gb data to {numb}")
@@ -72,12 +85,19 @@ while count < 5:
 			if borrow == 1:
 				airtime_borrow = int(input("enter amount of card you want to borrow:\n"))
 				aritime_num = int(input("enter phone number:\n"))
-				print(f"you borrowed {airtime_borrow} of airtime")
+				if airtime_borrow > 5000:
+					print("amount cant be greater than 5000")
+				else:
+
+					print(f"you borrowed {airtime_borrow} of airtime")
 			
 				if borrow == 2:
 					data_borrow = int(input("enter amount of data you want to borrow:\n"))
 					data_num = int(input("enter phone number:\n"))
-					print(f"you borrowed {data_borrow} of data")
+					if data_borrow > 5000:
+						print("amount cant be greater than 5000")
+					else:	
+						print(f"you borrowed {data_borrow} of data")
 		if command == 4:
 			print(f"your account balance is {balance}")
 			  
